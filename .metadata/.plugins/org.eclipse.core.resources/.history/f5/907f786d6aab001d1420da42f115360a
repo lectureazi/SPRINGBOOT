@@ -1,0 +1,32 @@
+package com.mc.bookmanager.rent;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class Rent {
+	
+	private int rmIdx;
+	private String userId;
+	private LocalDateTime regDate;
+	private boolean isReturn;
+	private String title;
+	private int rentBookCnt;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

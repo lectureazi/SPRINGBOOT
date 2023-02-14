@@ -1,0 +1,30 @@
+package com.mc.bookmanager.rent;
+
+import java.time.LocalDateTime;
+
+import lombok.Data;
+
+@Data
+public class Rent {
+	
+	// `RM_IDX`, `USER_ID`, `REG_DATE`, `IS_RETURN`, `TITLE`, `RENT_BOOK_CNT`
+	private int rmIdx;
+	private String userId;
+	private LocalDateTime regDate;
+	private boolean isReturn;
+	private String title;
+	private int rentBookCnt;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

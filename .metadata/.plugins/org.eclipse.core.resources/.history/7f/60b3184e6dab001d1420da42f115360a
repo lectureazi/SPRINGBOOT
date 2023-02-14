@@ -1,0 +1,12 @@
+package com.mc.bookmanager.jpa;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class EntityTemplate {
+	
+	private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("a_jpa")
+	
+	
+
+}

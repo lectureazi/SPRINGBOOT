@@ -1,0 +1,23 @@
+package com.mc.bookmanager.book;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class Book {
+	
+	private Integer bkIdx;
+	private String isbn;
+	private String category;
+	private String title;
+	private String author;
+	private String info;
+	private Integer bookAmt;
+	private LocalDateTime regDate;
+	private Integer rentCnt;
+	
+}

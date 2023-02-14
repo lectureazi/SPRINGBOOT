@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="a_jpa">
+		<properties>
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bm_jpa?useUnicode=true&amp;characterEncoding=utf8"/>
+         <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+         <property name="javax.persistence.jdbc.user" value="bm_jpa"/>
+         <property name="javax.persistence.jdbc.password" value="123qwe!@#QWE"/>
+        
+        <!-- 
+        	DDL Auto
+	        	create			: SessionFactory 시작시 테이블을 삭제하고 다시 생성 (개발용) 
+	        	create-drop		: SessionFactory 종료 시 테이블을 삭제
+	        	update			: SessionFactory 생성 시 컬럼 추가들의 작업을 진행, 데이터를 삭제하지 않음
+	        	validate		: SessionFactory 생성 시 테이블의 스키마가 적합한지 검사
+	        	none			: 아무 작업도 하지 않음
+         -->
+         <property name="hibernate.hbm2ddl.auto" value="none"/>         
+         <property name="hibernate.show_sql" value="true"/>
+         <property name="hibernate.format_sql" value="true"/>
+         
+         <property name="hibernate.cache.use_second_level_cache" value="true"/>
+         <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+         <property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+         <property name="hibernate.generate_statistics" value="true"/>
+      </properties>
+	
+	</persistence-unit>
+</persistence>

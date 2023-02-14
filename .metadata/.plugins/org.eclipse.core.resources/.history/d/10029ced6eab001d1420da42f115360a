@@ -1,0 +1,39 @@
+package com.mc.bookmanager.rent;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class Rent {
+	
+	@Id
+	@GeneratedValue
+	private Long rmIdx;
+	private LocalDateTime regDate;
+	private Boolean isReturn;
+	private String title;
+	private Integer rentBookCnt;
+	
+	@OneToMany
+	private List<RentBook> rentBooks;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
