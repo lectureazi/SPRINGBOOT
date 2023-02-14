@@ -14,5 +14,7 @@ public class EntityTemplate {
 		return EMF.createEntityManager();
 	}
 	
+	
+	
 
 }

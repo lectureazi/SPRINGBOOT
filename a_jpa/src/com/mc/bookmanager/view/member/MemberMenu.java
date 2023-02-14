@@ -1,9 +1,11 @@
 package com.mc.bookmanager.view.member;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.mc.bookmanager.member.Member;
 import com.mc.bookmanager.member.MemberController;
+import com.mc.bookmanager.member.dto.MemberDto;
 
 public class MemberMenu {
 	
@@ -22,38 +24,67 @@ public class MemberMenu {
 			System.out.print("번호 입력 : ");
 			
 			switch(sc.nextInt()) {
+			
 				case 1:
+					List<MemberDto> members = memberController.findAllMember();
+					members.forEach(e -> {
+						System.out.println(e);
+					});
+					break;
 					
+				case 2: if(memberController.signUp(join())){
+							System.out.println("환영합니다! 회원가입에 성공하였습니다.");
+						}else {
+							System.out.println("회원가입에 실패하였습니다.");
+						}
 					break;
-				case 2: 
-					break;
+					
 				case 3: 
 					sc.nextLine();
+					MemberDto member = new MemberDto();
 					System.out.print("회원정보를 수정할 아이디 : ");
+					member.setUserId(sc.nextLine());
 					
 					System.out.print("변경할 비밀번호 : ");
 					String password = sc.nextLine();
-					if(!password.equals("")) 
+					if(!password.equals("")) {
+						member.setPassword(password);
+					}
 					
 					System.out.print("변경할 전화번호 : ");
 					String tell = sc.nextLine();
-					if(!tell.equals("")) 
+					if(!tell.equals("")) {
+						member.setTell(tell);
+					}
 					
 					System.out.print("변경할 이메일 : ");
 					String email = sc.nextLine();
-					if(!email.equals("")) 
-					
+					if(!email.equals("")) {
+						member.setEmail(email);
+					}
 				
+					if(memberController.updateMember(member)) {
+						System.out.println("회원정보 수정이 성공적으로 완료되었습니다.");
+					}else {
+						System.out.println("회원정보 수정에 실패했습니다.");
+					}
 					break;
 					
 				case 4: 
 					System.out.print("탈퇴 시킬 회원의 아이디 입력 : ");
 					String userId = sc.next();
 					
+					if(memberController.removeMember(userId)) {
+						System.out.println("회원탈퇴 처리가 완료되었습니다.");
+					}else {
+						System.out.println("회원탈퇴에 실패하였습니다.");
+					}
 					
 					break;
 					
 				case 5: searchMenu(); break;
+				
+				
 				case 6: return;
 				default : System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 			}
@@ -73,12 +104,19 @@ public class MemberMenu {
 			switch(sc.nextInt()) {
 				case 1 : System.out.print("검색할 아이디 : ");
 						 String userId = sc.next();
-						 
+						 MemberDto member = memberController.findMemberById(userId);
+						 System.out.println(member);
 						 break;
+						 
 				case 2 : System.out.print("검색할 가입 시작 날짜[yyyy-mm-dd] :");
 						 String begin = sc.next();
 						 System.out.print("검색할 가입 끝날짜[yyyy-mm-dd] : ");
 						 String end = sc.next();
+						 
+						 List<MemberDto> members = memberController.findMemberByRegDate(begin, end);
+						 members.forEach(e -> {
+							 System.out.println(e);
+						 });
 						 
 						 break;
 						 
@@ -89,19 +127,21 @@ public class MemberMenu {
 	}
 		
 	//사용자로부터 회원가입 정보를 받아서 member객체로 반환
-	public Member join() {
-		
-		Member member = new Member();
-		
+	public MemberDto join() {
+		MemberDto member = new MemberDto();
 		System.out.println("회원 정보를 입력하세요.-------------");
 		
 		System.out.print("아이디 : ");
+		member.setUserId(sc.next());
 		
 		System.out.print("암호 : ");
+		member.setPassword(sc.next());
 		
 		System.out.print("이메일 : ");
+		member.setEmail(sc.next());
 		
 		System.out.print("전화 번호 : ");
+		member.setTell(sc.next());
 		return member;
 	}
 

@@ -8,11 +8,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import lombok.Data;
+import com.mc.bookmanager.book.dto.BookDto;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 @Entity
+@DynamicInsert // insert 쿼리를 생성할 때 null인 필드는 쿼리에서 생략
+@DynamicUpdate // entity에서 변경이 발견되지 않은 값은 쿼리에서 생략
+@Builder @NoArgsConstructor @AllArgsConstructor @Getter
 public class Book {
 	
 	//기본키
@@ -33,5 +42,13 @@ public class Book {
 	
 	@ColumnDefault("0")
 	private Integer rentCnt;
+
+	public static Book createBook(BookDto dto) {
+		return Book.builder().title(dto.getTitle()).author(dto.getAuthor()).isbn(dto.getIsbn()).category(dto.getCategory()).build();
+	}
+
+	public void updateInfo(String info) {
+		this.info = info;
+	}
 	
 }
