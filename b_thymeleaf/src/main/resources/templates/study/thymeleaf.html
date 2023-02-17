@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:insert="fragments :: common_head" />
+	
+	<style>
+		h1{
+			color:navy;
+		}
+	</style>
+</head>
+
+<body th:with="var='<i>내가 제일 좋아하는 언어 점수 : </i>'">
+
+	<h1>Thymeleaf 공부하기</h1>
+	
+	<h2>1. 변수를 선언하고 출력하기</h2>
+	<pre>
+	
+		변수 선언 :  th:with
+		변수 출력 : ${...}
+		
+		1. 변수의 스코프는 html 요소의 영역을 따라간다.
+		  선조요소에서 선언된 변수를 사용할 수 있다.
+		  형제요소나 후손요소에서 선언된 변수는 사용할 수 없다.
+		
+		2. | | : 변수를 문자열 리터럴과 결합하기 위해서는  | | 를 사용해야한다.
+		
+	</pre>
+	
+	<span th:text="|${var} 100점이요 100점|">타입리프 적용 전</span>
+	
+	<h2>2. 인라인 표현식</h2>
+	<pre>
+		겹 [] 를 사용해 인라인 표현식을 작성할 수 있다.
+	</pre>
+	
+	<span>[[${var}]] 100점이요 100점</span>
+	
+	<h2>3. 선택 변수 표현식 *{...}</h2>
+	
+	<ol th:object="${userInfo}">
+		<li th:text="${userInfo.userId}"></li>
+		<li th:text="*{password}"></li>
+		<li th:text="*{tell}"></li>
+		<li th:text="*{regDate}"></li>
+	</ol>
+	
+	
+	<h2>4. 링크 표현식 @{...}</h2>
+	<pre>
+		링크 표현식의 장점
+		1. context path를 자동으로 작성해준다.
+		2. url queryString을 편하게 쓸 수 있다.
+	</pre>
+	
+	<a th:href="@{/}">welcome페이지로 가기</a>
+	<a th:href="@{https://www.naver.com(name=mc,age=15)}">네이버에게 파라미터 여러 개 보내기</a>
+	<a th:href="@{https://www.naver.com(name=${userInfo.userId})}">네이버에게 파라미터 여러 개 보내기</a>
+	
+	
+	<h2>5. unescape처리 </h2>
+	<pre>
+		1. th:utext
+		2. 인라인 표현식에서의 unescape
+	</pre>
+	<p th:utext="${var}"></p>
+	<p>인라인 표현식으로 unescape : [(${var})]</p>
+	
+	
+	<h2>6. th:attr 속성</h2>
+	<div style="background-color:yellow" th:attr="style=|background-color:${thAttrColor}|">th:attr</div>
+	<div style="background-color:yellow" th:attrappend="style='; color:blue'">th:attr</div>
+	<div style="background-color:yellow" th:attrprepend="style='color:pink;'">th:attr</div>
+	
+	
+	<h2>7. 조건문</h2>
+	<h3>if / unless</h3>
+	<p th:if="${score >= 60 }">결과 : 합격</p>
+	<p th:unless="${score >= 60 }">결과 : 불합격</p>
+	
+	
+	<h3>8. each / switch case</h3>
+	
+	<ul>
+		<li th:each="e, status : ${devScore.keySet()}" th:switch="${devScore.get(e)/10}">
+			[[${status.count}]]. 과목 [[${e}]] : [[${devScore.get(e)}]]
+			<span th:case="${10}">(A++)</span>
+			<span th:case="${9}">(A)</span>
+			<span th:case="${8}">(B)</span>
+			<span th:case="${7}">(C)</span>
+			<span th:case="${6}">(D)</span>
+			<span th:case="*">(불합격)</span>
+		</li>
+	</ul>
+	
+	<h3>원하는 횟수만큼 반복한 반복문</h3>
+	
+	<div th:each="e, status : ${#numbers.sequence(0,5)}">
+		<span th:text="|index : ${status.index} ,|"></span>
+		<span th:text="|count : ${status.count} ,|"></span>
+		<span th:text="|size : ${status.size} ,|"></span>
+		<span th:text="|current : ${status.current} ,|"></span>
+		<span th:text="|even : ${status.even} ,|"></span>
+		<span th:text="|odd : ${status.odd} ,|"></span>
+		<span th:text="|first : ${status.first} , |"></span>
+		<span th:text="|last : ${status.last}|"></span>
+	</div>
+	
+	<h2>9. fragment 표현식 ~{...}</h2>
+	<pre>
+		fragment 표현식을 호출하는 방법
+		1. th:insert => html 요소에 fragment 추가
+		2. th:replace => html 요소를 대체
+	</pre>
+	<div th:insert="~{fragments :: top}"></div>
+	<div th:replace="~{fragments :: top}"></div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

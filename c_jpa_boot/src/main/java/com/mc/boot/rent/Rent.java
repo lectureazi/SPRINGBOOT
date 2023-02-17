@@ -1,4 +1,4 @@
-package com.mc.bookmanager.rent;
+package com.mc.boot.rent;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,12 +21,10 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.mc.bookmanager.book.Book;
-import com.mc.bookmanager.member.Member;
+import com.mc.boot.member.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

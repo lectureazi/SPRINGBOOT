@@ -1,4 +1,4 @@
-package com.mc.bookmanager.member;
+package com.mc.boot.member;
 
 import java.time.LocalDateTime;
 
@@ -12,11 +12,10 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.mc.bookmanager.member.dto.MemberDto;
+import com.mc.boot.member.dto.MemberDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

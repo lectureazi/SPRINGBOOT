@@ -1,4 +1,4 @@
-package com.mc.bookmanager.rent;
+package com.mc.boot.rent;
 
 import java.time.LocalDateTime;
 
@@ -8,15 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.mc.bookmanager.book.Book;
+import com.mc.boot.book.Book;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
