@@ -36,16 +36,13 @@ import lombok.NoArgsConstructor;
 	name = "Rent.rentBooks",
 	attributeNodes = {
 			@NamedAttributeNode(value = "rentBooks", subgraph = "RentBook.book")
+		   ,@NamedAttributeNode(value = "member")
 	}
 	,subgraphs = {
 			@NamedSubgraph(name="RentBook.book", attributeNodes = {
 				 	 @NamedAttributeNode(value = "book"
 				 			 //subgraph = "RentBook.book.Author"
 				 	 )})
-			
-//			,@NamedSubgraph(name="RentBook.book.Author", attributeNodes = {
-//				 	 @NamedAttributeNode("author")
-//			})
 	}
 )
 

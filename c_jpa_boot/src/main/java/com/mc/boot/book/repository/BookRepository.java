@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.mc.boot.book.Book;
 
-public interface BookRepository extends JpaRepository<Book, Long>, BookQueryDSLCustom { 
+public interface BookRepository extends JpaRepository<Book, Long>, BookRepositoryExtension { 
 	
 	// 도서명이나 작가로 도서를 검색
 	List<Book> findByTitleOrAuthor(String title, String author);

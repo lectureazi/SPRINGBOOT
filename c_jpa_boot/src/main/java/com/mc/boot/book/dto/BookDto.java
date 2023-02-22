@@ -19,9 +19,9 @@ public class BookDto {
 	private String category;
 	private String info;
 	private String isbn;
-	private int bookAmt;  //도서 재고
+	private Integer bookAmt;  //도서 재고
 	private LocalDateTime regDate; //등록 일자
-	private int rentCnt;  //대출 횟수
+	private Integer rentCnt;  //대출 횟수
 
 	public BookDto(Book book) {
 		this.bkIdx = book.getBkIdx();

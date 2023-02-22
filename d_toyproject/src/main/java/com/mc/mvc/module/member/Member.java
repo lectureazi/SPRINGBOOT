@@ -1,4 +1,4 @@
-package com.mc.boot.member;
+package com.mc.mvc.module.member;
 
 import java.time.LocalDateTime;
 
@@ -6,13 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import com.mc.boot.member.dto.MemberDto;
+import com.mc.mvc.module.member.dto.request.SignUpRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,7 +39,7 @@ public class Member {
 	@Column(columnDefinition = "timestamp default now()")
 	private LocalDateTime rentableDate;
 
-	public static Member createMember(MemberDto dto) {
+	public static Member createMember(SignUpRequest dto) {
 		return Member.builder()
 				.userId(dto.getUserId())
 				.password(dto.getPassword())
@@ -50,13 +48,7 @@ public class Member {
 				.build();
 	}
 	
-	public void updateMember(MemberDto memberDto) {
-		if(memberDto.getPassword() != null) this.password = memberDto.getPassword();
-		if(memberDto.getEmail() != null) this.email = memberDto.getEmail();
-		if(memberDto.getTell() != null) this.tell = memberDto.getTell();
-	}
-	
-	
+
 	
 	
 	
