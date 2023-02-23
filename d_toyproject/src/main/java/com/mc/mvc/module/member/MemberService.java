@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import com.mc.mvc.infra.code.Code;
-import com.mc.mvc.infra.mail.EmailSender;
+import com.mc.mvc.infra.util.mail.EmailSender;
 import com.mc.mvc.module.member.dto.Principal;
 import com.mc.mvc.module.member.dto.request.LoginRequest;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;

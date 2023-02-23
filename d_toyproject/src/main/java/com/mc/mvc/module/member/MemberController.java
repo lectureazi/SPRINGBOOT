@@ -26,7 +26,6 @@ import com.mc.mvc.module.member.dto.request.LoginRequest;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 import com.mc.mvc.module.member.validator.SignUpValidator;
 
-import groovyjarjarantlr4.v4.parse.ANTLRParser.throwsSpec_return;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -97,7 +96,10 @@ public class MemberController {
 	};
 	
 	@PostMapping("login")
-	public String loginImpl(@Valid LoginRequest loginRequest, Errors error, HttpSession session, RedirectAttributes redirectAttributes ) {
+	public String loginImpl(@Valid LoginRequest loginRequest
+							, Errors error
+							, HttpSession session
+							, RedirectAttributes redirectAttributes ) {
 		
 		if(error.hasErrors()) {
 			return "/member/login";
@@ -112,7 +114,6 @@ public class MemberController {
 		
 		session.setAttribute("auth", principal);
 		return "redirect:/";
-		
 	}
 	
 	@GetMapping("logout")
@@ -121,7 +122,10 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	
+	@GetMapping("mypage")
+	public String myPage() {
+		return "/member/mypage";
+	}
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.mc.mvc.infra.mail;
+package com.mc.mvc.infra.util.mail;
 
 import java.util.Map;
 
