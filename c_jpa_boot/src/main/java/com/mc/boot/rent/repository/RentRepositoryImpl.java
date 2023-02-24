@@ -1,6 +1,5 @@
 package com.mc.boot.rent.repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
