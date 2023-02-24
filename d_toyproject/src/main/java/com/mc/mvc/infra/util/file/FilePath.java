@@ -17,6 +17,7 @@ import com.mc.mvc.module.member.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @DynamicInsert // insert 쿼리를 생성할 때 null인 필드는 쿼리에서 생략
 @DynamicUpdate // entity에서 변경이 발견되지 않은 값은 쿼리에서 생략
 @Builder @NoArgsConstructor @AllArgsConstructor @Getter
+@EqualsAndHashCode
 public class FilePath {
 	
 	@Id

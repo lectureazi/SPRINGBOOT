@@ -1,6 +1,8 @@
 package com.mc.mvc.infra.util.file.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.mc.mvc.infra.code.Code;
 import com.mc.mvc.infra.util.file.FilePath;
@@ -34,7 +36,11 @@ public class FilePathDto {
 		this.groupName = entity.getGroupName();
 	}
 	
-	
+	public static List<FilePathDto> toDtoList(List<FilePath> entity) {
+		return entity.stream()
+				.map(e -> new FilePathDto(e))
+				.collect(Collectors.toList());
+	}
 	
 }
 

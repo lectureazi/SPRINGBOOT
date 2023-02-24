@@ -29,7 +29,14 @@
 /* boardView */
 .info{font-size:1.3vw; border-bottom:1px solid}
 .info span{padding-right: 3vw;}
-.info li{font-size:0.5vw;}
+
+.info li{
+	font-size: 1.2vw;
+	color:white;
+	margin-top:10px;
+	background-color: lightcoral;
+	border-radius: 10px;
+}
 
 .btn_section{
 	padding-top:2vh;
@@ -45,8 +52,11 @@
 	left:30%;
 }
 
-.btn_down-file{margin-left:1%;	z-index:999;}
+.btnClose{margin-left:1%;	z-index:999;
+	cursor: pointer;
+}
 .article_content{min-height: 50vh; border-bottom: 1px solid;}
+
 
 
 
