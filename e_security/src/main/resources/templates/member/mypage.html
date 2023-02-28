@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
+<head>
+</head>
+
+<body>
+
+<div class="container wrap_content" layout:fragment="content">
+	<ul>
+		<li th:text="${#authentication}"></li>
+		<li th:text="${#authentication.principal.password}"></li>
+		<li th:text="${#authentication.principal.email}"></li>
+		<li th:text="${#authentication.principal.tell}"></li>
+		<li th:text="${#authentication.principal.grade}"></li>
+	</ul>
+</div>
+
+</body>
+</html>
