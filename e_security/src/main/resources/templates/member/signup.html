@@ -69,7 +69,7 @@
 	  
 	  if(userId){
 	   
-	   fetch("/member/checkId?userId=" + userId)
+	   fetch("/member/check-id?userId=" + userId)
 	   .then(response => response.json())
 	   .then(obj => {
 		   if(obj.exist){
