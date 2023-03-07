@@ -12,8 +12,6 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import com.mc.mvc.infra.util.file.dto.FilePathDto;
-import com.mc.mvc.module.board.Board;
-import com.mc.mvc.module.member.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

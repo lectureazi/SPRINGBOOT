@@ -15,6 +15,7 @@ import com.mc.mvc.infra.util.file.dto.FilePathDto;
 import com.mc.mvc.module.board.Board;
 import com.mc.mvc.module.member.Member;
 
+import lombok.RequiredArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

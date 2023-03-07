@@ -18,7 +18,6 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import com.mc.mvc.infra.util.file.FilePath;
-import com.mc.mvc.infra.util.file.dto.FilePathDto;
 import com.mc.mvc.module.board.dto.request.BoardModifyRequest;
 import com.mc.mvc.module.board.dto.request.BoardRegistRequest;
 import com.mc.mvc.module.member.Member;

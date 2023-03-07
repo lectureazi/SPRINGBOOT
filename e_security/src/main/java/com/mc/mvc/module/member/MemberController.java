@@ -17,21 +17,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mc.mvc.infra.code.ErrorCode;
 import com.mc.mvc.infra.code.Role;
 import com.mc.mvc.infra.exception.HandlableException;
-import com.mc.mvc.module.member.dto.Principal;
 import com.mc.mvc.module.member.dto.request.LoginRequest;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 import com.mc.mvc.module.member.validator.SignUpValidator;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("member")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MemberController {
 	
 	private final SignUpValidator signUpValidator;
@@ -47,7 +46,7 @@ public class MemberController {
 		model.addAttribute("signUpRequest", new SignUpRequest());
 	}
 	
-	@GetMapping("checkId")
+	@GetMapping("check-id")
 	@ResponseBody
 	public Map<String,Boolean> checkId(String userId) {
 		return Map.of("exist", memberService.existUser(userId));

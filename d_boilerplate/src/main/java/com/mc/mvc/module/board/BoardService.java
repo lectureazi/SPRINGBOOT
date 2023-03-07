@@ -31,11 +31,11 @@ import com.mc.mvc.module.member.Member;
 import com.mc.mvc.module.member.MemberRepository;
 import com.mc.mvc.module.member.dto.Principal;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional(readOnly = true)
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BoardService {
 
 	private final BoardRepository boardRepository;

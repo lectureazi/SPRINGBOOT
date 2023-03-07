@@ -23,6 +23,7 @@ import com.mc.mvc.module.board.dto.request.BoardModifyRequest;
 import com.mc.mvc.module.board.dto.request.BoardRegistRequest;
 import com.mc.mvc.module.member.Member;
 
+import lombok.RequiredArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

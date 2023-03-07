@@ -1,8 +1,6 @@
 package com.mc.mvc.module.board;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,11 +29,11 @@ import com.mc.mvc.module.member.Member;
 import com.mc.mvc.module.member.MemberRepository;
 import com.mc.mvc.module.member.dto.Principal;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional(readOnly = true)
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BoardService {
 
 	private final BoardRepository boardRepository;

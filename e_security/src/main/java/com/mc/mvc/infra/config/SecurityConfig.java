@@ -17,11 +17,11 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import com.mc.mvc.infra.config.security.AuthFailureHandler;
 import com.mc.mvc.infra.config.security.AuthSuccessHandler;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity // Spring Security의 기본 설정 대신 사용자가 커스터마이징한 설정을 시큐리티에 적용
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SecurityConfig {
 	
 	private final AuthSuccessHandler authSuccessHandler;

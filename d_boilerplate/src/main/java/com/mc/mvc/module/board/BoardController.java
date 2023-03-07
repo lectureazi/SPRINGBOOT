@@ -27,10 +27,10 @@ import com.mc.mvc.module.board.dto.request.BoardRegistRequest;
 import com.mc.mvc.module.board.dto.resonse.BoardDetailResponse;
 import com.mc.mvc.module.member.dto.Principal;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("board")
 public class BoardController {
 

@@ -26,11 +26,11 @@ import com.mc.mvc.module.member.dto.request.LoginRequest;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 import com.mc.mvc.module.member.validator.SignUpValidator;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("member")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MemberController {
 	
 	private final SignUpValidator signUpValidator;

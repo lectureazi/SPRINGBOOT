@@ -8,10 +8,10 @@ import org.springframework.validation.Validator;
 import com.mc.mvc.module.member.MemberRepository;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SignUpValidator implements Validator{
 	
 	private MemberRepository memberRepository;

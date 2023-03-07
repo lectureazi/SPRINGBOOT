@@ -1,6 +1,8 @@
 package com.mc.mvc.module.board;
 
 import java.nio.charset.Charset;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,10 +30,11 @@ import com.mc.mvc.module.board.dto.resonse.BoardDetailResponse;
 import com.mc.mvc.module.member.UserPrincipal;
 import com.mc.mvc.module.member.dto.Principal;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("board")
 public class BoardController {
 
@@ -73,7 +76,6 @@ public class BoardController {
 		
 		BoardDetailResponse dto = boardService.findBoardByBdIdx(bdIdx);
 		model.addAttribute("board", dto);
-		
 		return "/board/board-contents";
 	}
 	

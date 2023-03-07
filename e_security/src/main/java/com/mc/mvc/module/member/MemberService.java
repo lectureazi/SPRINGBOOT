@@ -19,13 +19,12 @@ import org.springframework.web.client.RestTemplate;
 import com.mc.mvc.infra.code.Code;
 import com.mc.mvc.infra.util.mail.EmailSender;
 import com.mc.mvc.module.member.dto.Principal;
-import com.mc.mvc.module.member.dto.request.LoginRequest;
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class MemberService implements UserDetailsService{
 	

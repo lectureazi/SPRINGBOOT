@@ -12,6 +12,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import com.mc.mvc.module.member.dto.request.SignUpRequest;
 
+import lombok.RequiredArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
